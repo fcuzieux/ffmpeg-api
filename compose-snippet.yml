@@ -1,0 +1,8 @@
+# À fusionner dans votre docker-compose.yml existant (même fichier que n8n)
+services:
+  ffmpeg-api:
+    build: ./ffmpeg-api
+    container_name: ffmpeg-api
+    restart: unless-stopped
+    # PAS de section "ports:" : le service n'est joignable que depuis le
+    # réseau interne Docker, uniquement par n8n via http://ffmpeg-api:3103
